@@ -1,0 +1,9 @@
+---
+- name: Check whether or not add prefer repo in fastestmirror.conf
+  shell: grep "prefer" /etc/yum/pluginconf.d/fastestmirror.conf
+  register: result
+  ignore_errors: True
+
+- name: Add ftp.riken.jp in fastestmirror.conf
+  shell: echo "prefer=ftp.riken.jp" >> /etc/yum/pluginconf.d/fastestmirror.conf
+  when: result|failed

@@ -1,0 +1,6 @@
+---
+- name: "Import EPEL GPG key"
+  rpm_key: key=/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+
+- name: restart zabbix-agent
+  service: name=zabbix-agent state=restarted

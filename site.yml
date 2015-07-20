@@ -1,0 +1,20 @@
+---
+# file: site.yml
+- name: apply common configuration to all nodes
+  hosts: all
+  remote_user: root
+  gather_facts: True
+  roles:
+    - common
+
+#- name: configure diskcheck servers
+#  hosts: diskcheck
+#  remote_user: root
+#  roles:
+#  - diskcheck
+
+#- name: configure diskbench servers
+#  hosts: diskbench
+#  remote_user: root
+#  roles:
+#    - diskbench

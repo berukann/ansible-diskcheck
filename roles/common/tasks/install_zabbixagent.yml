@@ -1,0 +1,10 @@
+---
+- name: Install zabbix-agent.
+  yum: name=http://repo.zabbix.com/zabbix/2.4/rhel/6/x86_64/zabbix-agent-2.4.5-1.el6.x86_64.rpm state=present
+
+- name: Install zabbix-get.
+  yum: name=http://repo.zabbix.com/zabbix/2.4/rhel/6/x86_64/zabbix-get-2.4.5-1.el6.x86_64.rpm state=present
+
+- name: Configure zabbix agent
+  template: src=zabbix_agentd.conf.j2 dest=/etc/zabbix/zabbix_agentd.conf backup=yes
+  notify: restart zabbix-agent

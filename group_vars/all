@@ -1,0 +1,8 @@
+---
+# file: group_vars/all
+
+zabbix_agent_config_server: 127.0.0.1
+zabbix_agent_config_listen_ip: '{{ ansible_default_ipv4.address }}'
+zabbix_agent_config_server_active: '{{ ansible_default_ipv4.address }}'
+zabbix_agent_config_hostname: '{{ ansible_hostname }}'
+zabbix_agent_config_userparameter: 'test,test'
